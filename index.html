@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TiBlock — Crypto Signals for Telegram</title>
-  <meta name="description" content="Market-worthy signals, without the noise. Delivered straight to Telegram. Powered by multi-API data fusion and our own rule engine." />
+  <title>TiBlock Pulse | Crypto Intelligence Alerts on Telegram</title>
+  <meta name="description" content="Real-time, data-backed alerts on Bitcoin, Ethereum, and the broader crypto market. No subscriptions required to start, no noise, just signals." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,10 +57,10 @@
     }
 
     /* ── Card hover ───────────────────────────────── */
-    .step-card, .why-card {
+    .step-card, .why-card, .roadmap-card {
       transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
-    .step-card:hover, .why-card:hover {
+    .step-card:hover, .why-card:hover, .roadmap-card:hover {
       transform: translateY(-4px);
       border-color: rgba(176,176,176,0.14) !important;
       box-shadow: 0 12px 40px rgba(0,0,0,0.5);
@@ -102,13 +102,28 @@
 
     /* ── Signal item ──────────────────────────────── */
     .signal-item {
-      padding: 0.45rem 0;
+      padding: 0.55rem 0;
       font-size: 0.83rem;
-      color: #999;
+      color: #b8b8b8;
       border-bottom: 1px solid rgba(255,255,255,0.04);
-      display: flex; align-items: center; gap: 0.6rem;
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      line-height: 1.6;
     }
     .signal-item:last-child { border-bottom: none; }
+    .signal-item .sig-emoji { flex-shrink: 0; line-height: 1.6; }
+    .signal-item .sig-body { flex: 1; }
+    .signal-item .sig-name { font-weight: 600; color: #d8d8d8; }
+    .signal-item .sig-desc { font-size: 0.76rem; color: #8b8b8b; margin-top: 0.1rem; line-height: 1.6; }
+
+    /* ── Signal category headings ─────────────────── */
+    .sig-cat {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.16em; color: #b0b0b0;
+      margin: 1.5rem 0 0.6rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(176,176,176,0.08);
+    }
+    .sig-cat:first-child { margin-top: 0; }
 
     /* ── Premium feature row ──────────────────────── */
     .prem-row {
@@ -117,6 +132,86 @@
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
     .prem-row:last-child { border-bottom: none; }
+
+    /* ── Founding badge ───────────────────────────── */
+    .founding-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(255,200,80,0.07);
+      border: 1px solid rgba(255,200,80,0.18);
+      color: #d4a456;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .free-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(110,200,140,0.07);
+      border: 1px solid rgba(110,200,140,0.18);
+      color: #7dc4a0;
+      padding: 4px 10px; border-radius: 100px;
+    }
+
+    /* ── Comparison table ─────────────────────────── */
+    .compare-wrap {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    .compare-table th, .compare-table td {
+      padding: 0.95rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: middle;
+    }
+    .compare-table th {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d1d5db;
+      background: rgba(255,255,255,0.015);
+    }
+    .compare-table td { color: #9ca3af; }
+    .compare-table td.feature { color: #d8d8d8; font-weight: 500; }
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+    .compare-table .tick { color: #7dc4a0; }
+    .compare-table .cross { color: #444; }
+    .compare-col-highlight {
+      background: rgba(176,176,176,0.025);
+    }
+
+    /* ── Roadmap phase ────────────────────────────── */
+    .phase-tag {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .phase-1 { background: rgba(110,200,140,0.06); border: 1px solid rgba(110,200,140,0.16); color: #7dc4a0; }
+    .phase-2 { background: rgba(176,176,176,0.06); border: 1px solid rgba(176,176,176,0.16); color: #b0b0b0; }
+    .phase-3 { background: rgba(180,150,255,0.06); border: 1px solid rgba(180,150,255,0.16); color: #a695d4; }
+
+    .roadmap-item {
+      padding: 0.55rem 0;
+      font-size: 0.8rem;
+      color: #b8b8b8;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: flex-start; gap: 0.55rem;
+      line-height: 1.55;
+    }
+    .roadmap-item:last-child { border-bottom: none; }
 
     /* ── Scroll bounce ────────────────────────────── */
     @keyframes bounce-down {
@@ -172,7 +267,7 @@
 
       <!-- Brand name -->
       <a href="#" style="text-decoration:none;">
-        <span style="font-size:1.05rem;font-weight:700;color:#b0b0b0;letter-spacing:0.04em;">TiBlock</span><sup style="font-size:0.48rem;font-weight:500;color:#6b7280;letter-spacing:0.08em;vertical-align:super;">22</sup>
+        <span style="font-size:1.05rem;font-weight:700;color:#b0b0b0;letter-spacing:0.04em;">TiBlock</span><sup style="font-size:0.48rem;font-weight:500;color:#6b7280;letter-spacing:0.08em;vertical-align:super;"></sup>
       </a>
 
       <!-- CTA -->
@@ -206,19 +301,19 @@
     <div class="relative z-10 max-w-3xl mx-auto">
 
       <p style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:#d1d5db;margin-bottom:2.5rem;">
-        Crypto Intelligence &nbsp;·&nbsp; Telegram
+        Crypto Intelligence &nbsp;·&nbsp; Telegram Alerts
       </p>
 
       <h1 class="hero-title font-black leading-[1.04] tracking-[-0.03em] mb-6"
           style="font-size:clamp(2.8rem,7.5vw,5.2rem);">
-        Market‑worthy signals,<br />without the noise.
+        Real-time signals,<br />without the noise.
       </h1>
 
-      <p style="font-size:1.05rem;color:#9ca3af;max-width:400px;margin:0 auto 0.65rem;line-height:1.6;">
-        Delivered straight to Telegram.
+      <p style="font-size:1.05rem;color:#9ca3af;max-width:480px;margin:0 auto 0.65rem;line-height:1.6;">
+        Data-backed alerts on Bitcoin, Ethereum, and the broader crypto market.
       </p>
-      <p style="font-size:0.83rem;color:#d1d5db;max-width:380px;margin:0 auto 3rem;line-height:1.65;">
-        Powered by multi‑API data fusion and our own rule engine.
+      <p style="font-size:0.83rem;color:#d1d5db;max-width:420px;margin:0 auto 3rem;line-height:1.65;">
+        No subscriptions required to start. No noise, just signals.
       </p>
 
       <div class="flex flex-col items-center gap-3">
@@ -227,10 +322,10 @@
           <svg style="width:16px;height:16px;flex-shrink:0;" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/>
           </svg>
-          Join Free Channel
+          Join @TiBlock Pulse Free
         </a>
         <p style="font-size:0.7rem;color:#d1d5db;letter-spacing:0.03em;">
-          No spam. Unsubscribe anytime. 👇
+          Always free, always public, no signup. 👇
         </p>
       </div>
     </div>
@@ -262,14 +357,13 @@
         <!-- Step 01 -->
         <div class="step-card rounded-2xl p-8"
              style="background:#111;border:1px solid rgba(255,255,255,0.05);">
-          <!-- number circle -->
           <div class="mb-7 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                style="border:1px solid rgba(176,176,176,0.14);background:radial-gradient(circle at 38% 38%,rgba(176,176,176,0.07),transparent 70%);">
             <span style="font-size:0.72rem;font-weight:700;color:#b0b0b0;letter-spacing:0.1em;">01</span>
           </div>
-          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.65rem;letter-spacing:-0.01em;">Data Collection</h3>
+          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.65rem;letter-spacing:-0.01em;">Multi-API Fusion</h3>
           <p style="font-size:0.825rem;color:#9ca3af;line-height:1.85;">
-            We fuse real‑time cryptocurrency data from leading exchanges, on‑chain analytics, social sentiment, and derivatives markets into a single, powerful rule engine, so you get only the signals that matter, without managing a dozen subscriptions.
+            We continuously fuse data from leading exchanges, on-chain analytics, derivatives markets, and social sentiment into a single rule engine, so you don't manage a dozen subscriptions.
           </p>
         </div>
 
@@ -280,9 +374,9 @@
                style="border:1px solid rgba(176,176,176,0.14);background:radial-gradient(circle at 38% 38%,rgba(176,176,176,0.07),transparent 70%);">
             <span style="font-size:0.72rem;font-weight:700;color:#b0b0b0;letter-spacing:0.1em;">02</span>
           </div>
-          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.65rem;letter-spacing:-0.01em;">Processing</h3>
+          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.65rem;letter-spacing:-0.01em;">Confluence Filter</h3>
           <p style="font-size:0.825rem;color:#9ca3af;line-height:1.85;">
-            Our proprietary rule engine filters out the noise and identifies only high‑confidence market anomalies. No spam, no false alarms. Every alert must pass strict multi‑signal thresholds before it reaches you.
+            Our rule engine requires multi-signal convergence before an alert fires. A single data blip is not enough. We filter for high-conviction market anomalies, not noise.
           </p>
         </div>
 
@@ -293,9 +387,9 @@
                style="border:1px solid rgba(176,176,176,0.14);background:radial-gradient(circle at 38% 38%,rgba(176,176,176,0.07),transparent 70%);">
             <span style="font-size:0.72rem;font-weight:700;color:#b0b0b0;letter-spacing:0.1em;">03</span>
           </div>
-          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.65rem;letter-spacing:-0.01em;">Delivery</h3>
+          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.65rem;letter-spacing:-0.01em;">Telegram Delivery</h3>
           <p style="font-size:0.825rem;color:#9ca3af;line-height:1.85;">
-            Signals land instantly on your Telegram. No need to watch multiple charts or pay for expensive terminals. Just open the app and act on what matters most.
+            Signals land instantly on your Telegram. No expensive terminals, no charts to babysit. Open the app, see the alert, decide what to do.
           </p>
         </div>
 
@@ -315,8 +409,8 @@
       <div class="text-center mb-16">
         <p style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:#d1d5db;margin-bottom:0.75rem;">Signal Plans</p>
         <h2 style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:800;color:#f0f0f0;letter-spacing:-0.025em;line-height:1.2;">Free vs. Premium</h2>
-        <p style="font-size:0.83rem;color:#9ca3af;margin-top:0.75rem;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.65;">
-          Start for free. Upgrade when you're ready for deeper intelligence.
+        <p style="font-size:0.83rem;color:#9ca3af;margin-top:0.75rem;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65;">
+          Premium is currently free for early adopters. Members who join before paid mode launches keep their access free for life.
         </p>
       </div>
 
@@ -325,41 +419,173 @@
         <!-- ── FREE TIER ── -->
         <div class="rounded-2xl p-8" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
 
-          <div class="flex items-start justify-between mb-7">
+          <div class="flex items-start justify-between mb-6">
             <div>
-              <span style="display:inline-block;font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;border:1px solid rgba(176,176,176,0.18);color:#b0b0b0;padding:3px 10px;border-radius:100px;margin-bottom:0.75rem;">Free</span>
-              <h3 style="font-size:1.2rem;font-weight:700;color:#f0f0f0;letter-spacing:-0.015em;">TiBlock Pulse</h3>
-              <p style="font-size:0.75rem;color:#9ca3af;margin-top:0.25rem;">Active now · Telegram channel</p>
+              <span class="free-badge" style="margin-bottom:0.75rem;">Free Channel</span>
+              <h3 style="font-size:1.2rem;font-weight:700;color:#f0f0f0;letter-spacing:-0.015em;margin-top:0.75rem;">@TiBlockPulse</h3>
+              <p style="font-size:0.75rem;color:#9ca3af;margin-top:0.25rem;">Live now · always free, always public</p>
             </div>
             <a href="https://t.me/TiBlockPulse" target="_blank" rel="noopener"
-               style="color:#6b7280;transition:color 0.2s;" onmouseover="this.style.color='#b0b0b0'" onmouseout="this.style.color='#9ca3af'">
+               style="color:#6b7280;transition:color 0.2s;" onmouseover="this.style.color='#b0b0b0'" onmouseout="this.style.color='#6b7280'">
               <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/>
               </svg>
             </a>
           </div>
 
-          <p style="font-size:0.75rem;color:#9ca3af;margin-bottom:1.25rem;line-height:1.7;">
-            16 automated signal types, sent automatically to your Telegram channel. No manual scanning required.
+          <p style="font-size:0.78rem;color:#9ca3af;margin-bottom:1.5rem;line-height:1.7;">
+            Everything below ships to the free channel today. No signup, no email, no paywall.
           </p>
 
-          <div>
-            <div class="signal-item">🔶 Funding Rate Extremes</div>
-            <div class="signal-item">😱/🤑 Extreme Fear &amp; Greed</div>
-            <div class="signal-item">⚡ Volatility Spike</div>
-            <div class="signal-item">💰 Stablecoin Surge</div>
-            <div class="signal-item">⚠️ Funding / Price Divergence</div>
-            <div class="signal-item">🔥 OI Spike with Flat Price</div>
-            <div class="signal-item">👨‍💻 High Dev Activity</div>
-            <div class="signal-item">🟢 Extreme Fear Reversal <span style="font-size:0.72rem;color:#9ca3af;margin-left:0.35rem;">(STRONG BUY)</span></div>
-            <div class="signal-item">🔴 Extreme Greed Exit <span style="font-size:0.72rem;color:#9ca3af;margin-left:0.35rem;">(TAKE PROFIT)</span></div>
-            <div class="signal-item">📈 Momentum Confirmation</div>
-            <div class="signal-item">🩸 Panic Cascade</div>
-            <div class="signal-item">🚀 SUPER BUY <span style="font-size:0.72rem;color:#9ca3af;margin-left:0.35rem;">(Santiment + Fear)</span></div>
-            <div class="signal-item">📊 Orderbook Buy / Sell Pressure</div>
-            <div class="signal-item">💪 Aggressive Buying / Selling</div>
-            <div class="signal-item">🐂/🐻 OI Momentum <span style="font-size:0.72rem;color:#9ca3af;margin-left:0.35rem;">(Long / Short Buildup)</span></div>
-            <div class="signal-item">⚡ Micro Breakout Detector</div>
+          <!-- Sentiment -->
+          <div class="sig-cat">Sentiment Signals</div>
+          <div class="signal-item">
+            <span class="sig-emoji">😱🤑</span>
+            <div class="sig-body">
+              <div class="sig-name">Extreme Fear / Greed</div>
+              <div class="sig-desc">F&amp;G hits ≤10 (capitulation) or ≥90 (euphoria).</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🟢</span>
+            <div class="sig-body">
+              <div class="sig-name">Extreme Fear Reversal</div>
+              <div class="sig-desc">F&amp;G below 20 turning back up. Historically a high-probability long-term entry zone.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🔴</span>
+            <div class="sig-body">
+              <div class="sig-name">Extreme Greed Exit</div>
+              <div class="sig-desc">F&amp;G above 75 and now declining. Late-cycle euphoria cooling.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🩸</span>
+            <div class="sig-body">
+              <div class="sig-name">Panic Cascade</div>
+              <div class="sig-desc">F&amp;G below 25 with a fast 3-day collapse. Capitulation event signature.</div>
+            </div>
+          </div>
+
+          <!-- Whale Flow -->
+          <div class="sig-cat">Whale Flow</div>
+          <div class="signal-item">
+            <span class="sig-emoji">🚨</span>
+            <div class="sig-body">
+              <div class="sig-name">Major Exchange Inflow / Outflow</div>
+              <div class="sig-desc">Net flow &gt;$50M over 24h. Inflow = sell pressure incoming, outflow = accumulation.</div>
+            </div>
+          </div>
+
+          <!-- Derivatives -->
+          <div class="sig-cat">Derivatives</div>
+          <div class="signal-item">
+            <span class="sig-emoji">🔶</span>
+            <div class="sig-body">
+              <div class="sig-name">Funding Rate Extremes</div>
+              <div class="sig-desc">Over-leveraged longs (flush risk) or crowded shorts (squeeze setup).</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">⚠️</span>
+            <div class="sig-body">
+              <div class="sig-name">Funding / Price Divergence</div>
+              <div class="sig-desc">Price falling while funding stays positive. Trapped longs setup.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🔥</span>
+            <div class="sig-body">
+              <div class="sig-name">OI Spike with Flat Price</div>
+              <div class="sig-desc">&gt;5% OI growth in 4h while BTC moves &lt;0.3%/h. Primed for a directional squeeze.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">⚖️</span>
+            <div class="sig-body">
+              <div class="sig-name">Long / Short Ratio Extreme</div>
+              <div class="sig-desc">Positioning beyond 2:1. Contrarian warning of a flush or squeeze.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">⚡</span>
+            <div class="sig-body">
+              <div class="sig-name">Volatility Spike</div>
+              <div class="sig-desc">BTC moves ±3% within an hour. Cascading liquidation risk.</div>
+            </div>
+          </div>
+
+          <!-- Market Structure -->
+          <div class="sig-cat">Market Structure</div>
+          <div class="signal-item">
+            <span class="sig-emoji">📉</span>
+            <div class="sig-body">
+              <div class="sig-name">Stablecoin Net Contraction</div>
+              <div class="sig-desc">Total stablecoin cap shrinking &gt;$500M in 24h. Capital leaving crypto.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">👨‍💻</span>
+            <div class="sig-body">
+              <div class="sig-name">High Development Activity</div>
+              <div class="sig-desc">Surge in on-chain commits across BTC, ETH, Solana. Fundamental health signal.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">📈</span>
+            <div class="sig-body">
+              <div class="sig-name">Emerging Social Trends</div>
+              <div class="sig-desc">New keywords spiking in crypto discussions. Narrative attention often precedes volatility.</div>
+            </div>
+          </div>
+
+          <!-- Hero Confluence -->
+          <div class="sig-cat">Hero Confluence Alerts <span style="font-weight:500;text-transform:none;letter-spacing:0;color:#9ca3af;font-size:0.7rem;margin-left:0.4rem;">(free summary, premium gets depth)</span></div>
+          <div class="signal-item">
+            <span class="sig-emoji">🟢</span>
+            <div class="sig-body">
+              <div class="sig-name">BTC Whale Accumulation Confluence</div>
+              <div class="sig-desc">Coordinated outflows during fearful sentiment with weak price action. Smart-money accumulation.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🔴</span>
+            <div class="sig-body">
+              <div class="sig-name">BTC Whale Distribution Confluence</div>
+              <div class="sig-desc">Coordinated deposits during euphoric sentiment after a hot weekly run. Late-cycle exit pattern.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🟢</span>
+            <div class="sig-body">
+              <div class="sig-name">Capitulation Reversal Setup</div>
+              <div class="sig-desc">Extreme fear turning up, BTC whales accumulating, stables not contracting, after &gt;10% weekly drop.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">💥</span>
+            <div class="sig-body">
+              <div class="sig-name">Liquidation Cascade In Progress</div>
+              <div class="sig-desc">Large BTC 1h move with &gt;4% evaporation of aggregate OI. Real-time event marker.</div>
+            </div>
+          </div>
+
+          <!-- Scheduled -->
+          <div class="sig-cat">Scheduled Broadcasts</div>
+          <div class="signal-item">
+            <span class="sig-emoji">📅</span>
+            <div class="sig-body">
+              <div class="sig-name">Daily Market Pulse at 09:00 UTC</div>
+              <div class="sig-desc">BTC/ETH price, F&amp;G, funding, OI, exchange netflow, 50d/200d MAs.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🗓️</span>
+            <div class="sig-body">
+              <div class="sig-name">Weekly Market Pulse, Mondays 09:00 UTC</div>
+              <div class="sig-desc">Weekly summary: BTC trend, macro context, what resolved.</div>
+            </div>
           </div>
 
           <div style="margin-top:1.75rem;">
@@ -368,7 +594,7 @@
               <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/>
               </svg>
-              Join @TiBlockPulse — It's Free
+              Join @TiBlockPulse, It's Free
             </a>
           </div>
         </div>
@@ -384,78 +610,339 @@
           <div class="absolute inset-0 pointer-events-none"
                style="background:radial-gradient(ellipse 70% 45% at 50% -8%,rgba(176,176,176,0.04),transparent);"></div>
 
-          <div class="flex items-start justify-between mb-7" style="position:relative;">
+          <div class="flex items-start justify-between mb-6" style="position:relative;">
             <div>
-              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;">
                 <span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;border:1px solid rgba(176,176,176,0.22);color:#b0b0b0;padding:3px 10px;border-radius:100px;">Premium</span>
-                <span style="font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;background:rgba(255,200,80,0.07);border:1px solid rgba(255,200,80,0.18);color:#9a7830;padding:3px 8px;border-radius:100px;">Coming Soon</span>
+                <span class="founding-badge">Free Early Access</span>
               </div>
-              <h3 style="font-size:1.2rem;font-weight:700;color:#f0f0f0;letter-spacing:-0.015em;">TiBlock Alpha</h3>
-              <p style="font-size:0.75rem;color:#9ca3af;margin-top:0.25rem;">Launching soon</p>
+              <h3 style="font-size:1.2rem;font-weight:700;color:#f0f0f0;letter-spacing:-0.015em;">TiBlock Alpha Premium</h3>
+              <p style="font-size:0.75rem;color:#9ca3af;margin-top:0.25rem;">Coming soon · join the early-access channel today</p>
             </div>
             <div style="width:38px;height:38px;border-radius:50%;background:rgba(176,176,176,0.05);border:1px solid rgba(176,176,176,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <span style="font-size:0.7rem;font-weight:800;color:#888;letter-spacing:-0.02em;">Ti</span>
             </div>
           </div>
 
-          <p style="font-size:0.825rem;color:#888;margin-bottom:1.75rem;line-height:1.75;font-weight:500;position:relative;">
-            Joining soon. Free channel members will be the first to know when we launch.
+          <div style="background:rgba(255,200,80,0.04);border:1px solid rgba(255,200,80,0.14);border-radius:10px;padding:0.85rem 1rem;margin-bottom:1.5rem;position:relative;">
+            <p style="font-size:0.78rem;color:#d4a456;font-weight:600;margin-bottom:0.2rem;">Lifetime free for early adopters</p>
+            <p style="font-size:0.74rem;color:#9ca3af;line-height:1.6;">
+              Members who join the premium channel before paid mode launches keep their access free permanently. No conversion required. No expiring trial.
+            </p>
+          </div>
+
+          <p style="font-size:0.78rem;color:#9ca3af;margin-bottom:1.25rem;line-height:1.7;position:relative;">
+            Premium subscribers get every free alert, plus deeper context, real-time-priority routing, and exclusive setups.
           </p>
 
-          <div style="position:relative;">
-
-            <div class="prem-row">
-              <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
-                <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
-              </div>
-              <div>
-                <p style="font-size:0.85rem;font-weight:600;color:#d0d0d0;margin-bottom:0.2rem;">On-Chain Intelligence</p>
-                <p style="font-size:0.775rem;color:#9ca3af;line-height:1.65;">MVRV Z-Score, Exchange Whale Ratio, Miner Flows, and more deep on-chain metrics.</p>
-              </div>
+          <!-- Premium-only setups -->
+          <div class="sig-cat">Premium-Only Setup Alerts</div>
+          <div class="signal-item">
+            <span class="sig-emoji">🔥</span>
+            <div class="sig-body">
+              <div class="sig-name">Long Squeeze Setup</div>
+              <div class="sig-desc">Funding paying premium, BTC up &gt;5% in 24h, aggregate OI above $10B. Pre-flush warning.</div>
             </div>
-
-            <div class="prem-row">
-              <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
-                <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
-              </div>
-              <div>
-                <p style="font-size:0.85rem;font-weight:600;color:#d0d0d0;margin-bottom:0.2rem;">Master Confluence Signals</p>
-                <p style="font-size:0.775rem;color:#9ca3af;line-height:1.65;">"The Bottom Fisher", "Leverage Overload", "Retail Capitulation" — high-conviction composite signals.</p>
-              </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🚀</span>
+            <div class="sig-body">
+              <div class="sig-name">Short Squeeze Engine</div>
+              <div class="sig-desc">Shorts paying funding, L/S ratio crowded short, active accumulation in last 4h. Pre-pump fuel detection.</div>
             </div>
-
-            <div class="prem-row">
-              <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
-                <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
-              </div>
-              <div>
-                <p style="font-size:0.85rem;font-weight:600;color:#d0d0d0;margin-bottom:0.2rem;">Smart Money Tracking</p>
-                <p style="font-size:0.775rem;color:#9ca3af;line-height:1.65;">Monitor significant wallet movements before the crowd notices.</p>
-              </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">⚖️</span>
+            <div class="sig-body">
+              <div class="sig-name">Funding × Sentiment Divergence</div>
+              <div class="sig-desc">Positioning vs sentiment mismatch. Trapped longs / trapped shorts pattern.</div>
             </div>
+          </div>
 
-            <div class="prem-row">
-              <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
-                <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
-              </div>
-              <div>
-                <p style="font-size:0.85rem;font-weight:600;color:#d0d0d0;margin-bottom:0.2rem;">Token Unlock Alerts</p>
-                <p style="font-size:0.775rem;color:#9ca3af;line-height:1.65;">Know before unlocks hit the market. Plan, not react.</p>
-              </div>
+          <!-- Premium depth on hero alerts -->
+          <div class="sig-cat">Hero Alert Depth</div>
+          <div class="prem-row" style="padding-top:0.6rem;padding-bottom:0.6rem;">
+            <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
+              <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
             </div>
+            <div>
+              <p style="font-size:0.83rem;font-weight:600;color:#d0d0d0;margin-bottom:0.15rem;">Top contributing transfers</p>
+              <p style="font-size:0.74rem;color:#9ca3af;line-height:1.6;">Top 5 transfers with named exchanges (e.g. <em>bitfinex → unknown_wallet_847f, $78M</em>).</p>
+            </div>
+          </div>
+          <div class="prem-row" style="padding-top:0.6rem;padding-bottom:0.6rem;">
+            <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
+              <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.83rem;font-weight:600;color:#d0d0d0;margin-bottom:0.15rem;">Conviction score (0.0–1.0)</p>
+              <p style="font-size:0.74rem;color:#9ca3af;line-height:1.6;">Multi-factor analysis quantifying how strong the setup is.</p>
+            </div>
+          </div>
+          <div class="prem-row" style="padding-top:0.6rem;padding-bottom:0.6rem;">
+            <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
+              <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.83rem;font-weight:600;color:#d0d0d0;margin-bottom:0.15rem;">Full sentiment context</p>
+              <p style="font-size:0.74rem;color:#9ca3af;line-height:1.6;">F&amp;G value, 3-day delta, trend direction, funding snapshot at trigger time.</p>
+            </div>
+          </div>
+          <div class="prem-row" style="padding-top:0.6rem;padding-bottom:0.6rem;">
+            <div style="width:20px;height:20px;flex-shrink:0;border-radius:5px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.14);display:flex;align-items:center;justify-content:center;margin-top:1px;">
+              <svg style="width:9px;height:9px;color:#b0b0b0;" fill="currentColor" viewBox="0 0 8 8"><rect width="8" height="8" rx="1"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.83rem;font-weight:600;color:#d0d0d0;margin-bottom:0.15rem;">Forward look</p>
+              <p style="font-size:0.74rem;color:#9ca3af;line-height:1.6;">What to watch for next, what would increase conviction.</p>
+            </div>
+          </div>
 
-            <p style="font-size:0.75rem;color:#9ca3af;padding:0.75rem 0 0.25rem 1.75rem;">— and much more.</p>
-
+          <!-- Premium reports -->
+          <div class="sig-cat">Premium Reports</div>
+          <div class="signal-item">
+            <span class="sig-emoji">📅</span>
+            <div class="sig-body">
+              <div class="sig-name">Premium Daily Pulse</div>
+              <div class="sig-desc">300–500 word daily commentary with positioning context, not just numbers.</div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <span class="sig-emoji">🗓️</span>
+            <div class="sig-body">
+              <div class="sig-name">Premium Weekly Outlook</div>
+              <div class="sig-desc">Comprehensive weekly synthesis: signals, what resolved, what's setting up.</div>
+            </div>
           </div>
 
           <div style="margin-top:1.75rem;position:relative;">
             <a href="https://t.me/TiBlockPulse" target="_blank" rel="noopener"
                class="btn-outline w-full justify-center text-sm py-3.5">
-              Notify Me on Launch →
+              Get Free Early Access →
             </a>
             <p style="font-size:0.68rem;color:#9ca3af;text-align:center;margin-top:0.65rem;">
-              Join the free channel to get early access.
+              Join the free channel. Premium invite goes out before paid mode launches.
             </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- ══════════════════════════════════════════════════════
+       COMPARISON TABLE
+  ═══════════════════════════════════════════════════════ -->
+  <section id="compare" class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+        <p style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:#d1d5db;margin-bottom:0.75rem;">How It Works</p>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:800;color:#f0f0f0;letter-spacing:-0.025em;line-height:1.2;">What you get on each tier</h2>
+      </div>
+
+      <div class="compare-wrap overflow-x-auto">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th style="min-width:240px;">Feature</th>
+              <th>Free</th>
+              <th class="compare-col-highlight">Premium <span style="font-weight:500;color:#7dc4a0;font-size:0.66rem;">(early access, free now)</span></th>
+              <th>Premium <span style="font-weight:500;color:#9ca3af;font-size:0.66rem;">(paid mode, future)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature">Daily / Weekly Market Pulse</td>
+              <td><span class="tick">✓</span> summary</td>
+              <td class="compare-col-highlight"><span class="tick">✓</span> + long-form analysis</td>
+              <td><span class="tick">✓</span> + AI commentary</td>
+            </tr>
+            <tr>
+              <td class="feature">Sentiment, funding, volatility alerts</td>
+              <td><span class="tick">✓</span></td>
+              <td class="compare-col-highlight"><span class="tick">✓</span></td>
+              <td><span class="tick">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feature">Whale Flow alerts</td>
+              <td><span class="tick">✓</span> summary</td>
+              <td class="compare-col-highlight"><span class="tick">✓</span> + transfer detail</td>
+              <td><span class="tick">✓</span> + transfer detail + AI</td>
+            </tr>
+            <tr>
+              <td class="feature">Capitulation / Distribution Confluences</td>
+              <td><span class="tick">✓</span> summary</td>
+              <td class="compare-col-highlight"><span class="tick">✓</span> + 4-leg breakdown</td>
+              <td><span class="tick">✓</span> + 4-leg + AI</td>
+            </tr>
+            <tr>
+              <td class="feature">Liquidation Cascade real-time</td>
+              <td><span class="tick">✓</span> <span style="font-size:0.72rem;color:#9ca3af;">(~5 min lag at launch)</span></td>
+              <td class="compare-col-highlight"><span class="tick">✓</span> real-time</td>
+              <td><span class="tick">✓</span> real-time + size</td>
+            </tr>
+            <tr>
+              <td class="feature">Squeeze Setup alerts (Long / Short)</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight"><span class="tick">✓</span></td>
+              <td><span class="tick">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feature">Funding × Sentiment Divergence</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight"><span class="tick">✓</span></td>
+              <td><span class="tick">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feature">AI commentary on alerts</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight" style="color:#d4a456;">coming</td>
+              <td><span class="tick">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feature">Options / max-pain alerts</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight"><span class="cross">×</span></td>
+              <td><span class="tick">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feature">On-chain valuation (MVRV / NUPL)</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight"><span class="cross">×</span></td>
+              <td><span class="tick">✓</span></td>
+            </tr>
+            <tr>
+              <td class="feature">Custom watchlists</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight"><span class="cross">×</span></td>
+              <td><span class="tick">✓</span> <span style="font-size:0.72rem;color:#9ca3af;">(Pro tier)</span></td>
+            </tr>
+            <tr>
+              <td class="feature">Webhook delivery</td>
+              <td><span class="cross">×</span></td>
+              <td class="compare-col-highlight"><span class="cross">×</span></td>
+              <td><span class="tick">✓</span> <span style="font-size:0.72rem;color:#9ca3af;">(Pro tier)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Founding member callout -->
+      <div class="mt-8 rounded-2xl p-6 sm:p-8" style="background:linear-gradient(135deg,rgba(255,200,80,0.04),rgba(176,176,176,0.02));border:1px solid rgba(255,200,80,0.16);position:relative;overflow:hidden;">
+        <div class="absolute top-0 left-0 right-0 h-px pointer-events-none"
+             style="background:linear-gradient(90deg,transparent,rgba(255,200,80,0.35),transparent);"></div>
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div style="max-width:640px;">
+            <span class="founding-badge" style="margin-bottom:0.85rem;">Founding Member</span>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#f0f0f0;letter-spacing:-0.015em;margin-top:0.85rem;margin-bottom:0.5rem;">First 100 founders lock in $9/mo for life.</h3>
+            <p style="font-size:0.82rem;color:#9ca3af;line-height:1.7;">
+              When premium goes paid, standard pricing is $19/mo. Founding members keep $9/mo permanently.
+              A higher Pro tier with custom watchlists and webhook delivery launches in Phase 3.
+              <br /><span style="color:#d4a456;font-weight:600;">Members who join the premium channel before paid mode launches keep their access free permanently.</span>
+              No conversion required. No expiring trial. Founder status, no rug.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="https://t.me/TiBlockPulse" target="_blank" rel="noopener"
+               class="btn-solid text-sm px-6 py-3 whitespace-nowrap">
+              <svg style="width:14px;height:14px;flex-shrink:0;" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/>
+              </svg>
+              Claim Free Access
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+
+  <!-- ══════════════════════════════════════════════════════
+       ROADMAP
+  ═══════════════════════════════════════════════════════ -->
+  <section id="roadmap" class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.22em;color:#d1d5db;margin-bottom:0.75rem;">What's Next</p>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:800;color:#f0f0f0;letter-spacing:-0.025em;line-height:1.2;">Coming Soon to Premium</h2>
+        <p style="font-size:0.83rem;color:#9ca3af;margin-top:0.75rem;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.65;">
+          Features in development. Order is roughly chronological, earliest first.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <!-- Phase 1 -->
+        <div class="roadmap-card rounded-2xl p-7" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
+          <span class="phase-tag phase-1">Phase 1</span>
+          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.85rem;letter-spacing:-0.01em;">AI &amp; routing</h3>
+
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">🤖</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">AI commentary on every premium alert</span> — 100-word "what this means for traders" appended to each message. Powered by Claude.</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">🗓️</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">AI weekly market synthesis</span> — 800–1,500 word long-form analysis of the week's signals.</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">🎯</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Real-time priority routing</span> — premium gets cascade &amp; squeeze alerts immediately; free channel posts within 5–10 minutes.</div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="roadmap-card rounded-2xl p-7" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
+          <span class="phase-tag phase-2">Phase 2</span>
+          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.85rem;letter-spacing:-0.01em;">Deeper data sources</h3>
+
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">📊</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Options flow alerts</span> <span style="color:#777;font-size:0.7rem;">(via CoinGlass)</span> — max-pain divergence, options expiry warnings, P/C ratio extremes.</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">💥</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Real-time liquidation cascades with size</span> <span style="color:#777;font-size:0.7rem;">(via CoinGlass)</span> — actual dollar amount of forced unwinds, not just an evaporation %.</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">🐋</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">On-chain valuation alerts</span> <span style="color:#777;font-size:0.7rem;">(via Glassnode)</span> — MVRV deep-value zones, NUPL extremes, miner-outflow spikes, exchange-balance shifts.</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">📰</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Breaking news with on-chain context</span> <span style="color:#777;font-size:0.7rem;">(via CryptoPanic)</span> — significant news cross-referenced against current whale/exchange activity.</div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="roadmap-card rounded-2xl p-7" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
+          <span class="phase-tag phase-3">Phase 3</span>
+          <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.85rem;letter-spacing:-0.01em;">Customization &amp; community</h3>
+
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">🎚️</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Custom watchlists</span> — set per-asset thresholds (e.g., <em>"alert me when whales move USDT into Coinbase &gt;$50M"</em>).</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">📡</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Webhook delivery</span> — pipe alerts directly to your trading system or Discord. <span style="color:#777;font-size:0.7rem;">(Pro tier)</span></div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">🌐</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Social sentiment confluences</span> <span style="color:#777;font-size:0.7rem;">(via LunarCrush)</span> — narrative-pump and smart-distribution signals.</div>
+          </div>
+          <div class="roadmap-item">
+            <span style="flex-shrink:0;">💼</span>
+            <div><span style="color:#d8d8d8;font-weight:600;">Premium Discord community</span> — direct access to other premium subscribers and the team.</div>
           </div>
         </div>
 
@@ -482,7 +969,6 @@
         <!-- Card 1 -->
         <div class="why-card rounded-2xl p-8" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
           <div style="width:36px;height:36px;border-radius:8px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-            <!-- Save time icon: clock/diamond -->
             <svg style="width:14px;height:14px;color:#888;" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
             </svg>
@@ -496,7 +982,6 @@
         <!-- Card 2 -->
         <div class="why-card rounded-2xl p-8" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
           <div style="width:36px;height:36px;border-radius:8px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-            <!-- Target/crosshair icon -->
             <svg style="width:14px;height:14px;color:#888;" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
             </svg>
@@ -510,28 +995,26 @@
         <!-- Card 3 -->
         <div class="why-card rounded-2xl p-8" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
           <div style="width:36px;height:36px;border-radius:8px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-            <!-- Lock/shield icon -->
             <svg style="width:14px;height:14px;color:#888;" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
               <rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/>
             </svg>
           </div>
           <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.55rem;letter-spacing:-0.01em;">Fully Automated</h3>
           <p style="font-size:0.825rem;color:#9ca3af;line-height:1.85;">
-            Our system runs 24/7. You'll never miss a market event because you were asleep, busy, or away from charts.
+            Our system runs 24/7. You won't miss a market event because you were asleep, busy, or away from charts.
           </p>
         </div>
 
         <!-- Card 4 -->
         <div class="why-card rounded-2xl p-8" style="background:#111;border:1px solid rgba(255,255,255,0.05);">
           <div style="width:36px;height:36px;border-radius:8px;background:rgba(176,176,176,0.06);border:1px solid rgba(176,176,176,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-            <!-- Signal/wifi icon -->
             <svg style="width:14px;height:14px;color:#888;" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
               <path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/>
             </svg>
           </div>
           <h3 style="font-size:0.95rem;font-weight:700;color:#f0f0f0;margin-bottom:0.55rem;letter-spacing:-0.01em;">Multi-Source Confidence</h3>
           <p style="font-size:0.825rem;color:#9ca3af;line-height:1.85;">
-            Signals cross-reference multiple APIs. A single data blip doesn't trigger an alert, we require convergence before we notify you.
+            Signals cross-reference multiple APIs. A single data blip doesn't trigger an alert — we require convergence before we notify you.
           </p>
         </div>
 
@@ -581,22 +1064,20 @@
 
       <div>
         <a href="#" style="font-size:0.9rem;font-weight:700;color:#6b7280;letter-spacing:0.04em;text-decoration:none;">
-          TiBlock<sup style="font-size:0.45rem;vertical-align:super;letter-spacing:0.08em;">22</sup>
+          TiBlock<sup style="font-size:0.45rem;vertical-align:super;letter-spacing:0.08em;"></sup>
         </a>
         <p style="font-size:0.7rem;color:#6b7280;margin-top:0.25rem;">© 2026 TiBlock. All rights reserved.</p>
       </div>
 
-    
-
       <div style="display:flex;align-items:center;gap:1.25rem;">
         <a href="mailto:hello@tiblock.com"
            style="font-size:0.72rem;color:#6b7280;text-decoration:none;transition:color 0.2s;"
-           onmouseover="this.style.color='#888'" onmouseout="this.style.color='#242424'">
+           onmouseover="this.style.color='#888'" onmouseout="this.style.color='#6b7280'">
           hello@tiblock.com
         </a>
         <a href="https://t.me/TiBlockPulse" target="_blank" rel="noopener"
            style="color:#6b7280;transition:color 0.2s;"
-           onmouseover="this.style.color='#888'" onmouseout="this.style.color='#242424'">
+           onmouseover="this.style.color='#888'" onmouseout="this.style.color='#6b7280'">
           <svg style="width:15px;height:15px;" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/>
           </svg>
